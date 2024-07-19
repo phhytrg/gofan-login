@@ -7,7 +7,8 @@ import * as yup from 'yup';
 import playOnLogo from '../assets/there-for-every-moment-light.png';
 import graduation from '../assets/graduation.png';
 import companyLogos from '../assets/company-logos.png';
-import './login-form.scss';
+import './LoginForm.scss';
+import { authRepo } from '../../../repositories/auth';
 
 interface LoginFormInput {
   email: string;
@@ -74,8 +75,7 @@ const LoginForm = () => {
     resolver: useYupValidationResolver(validationSchema),
   });
   const onSubmit: SubmitHandler<LoginFormInput> = (data) => {
-    console.log(data);
-    console.log(formState);
+    authRepo.login(data);
   };
 
   return (

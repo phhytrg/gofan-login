@@ -1,1 +1,1 @@
-export const accounts = 'https://gofan.com/api/v1/accounts';
+export const ACCOUNTS_API = 'accounts';
