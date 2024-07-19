@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, prettyDOM, render, screen } from '@testing-library/react';
-import LoginForm from '../login-form';
+import LoginForm from '../LoginForm';
 
 describe('Login Form', () => {
   beforeEach(() => {

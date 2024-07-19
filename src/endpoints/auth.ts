@@ -1,0 +1,1 @@
+export const login = 'https://gofan.com/api/v1/auth/login';

@@ -1,11 +1,13 @@
+import { useCallback } from 'react';
 import { Button, Column, Grid, PasswordInput, TextInput } from '@carbon/react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import './login-form.scss';
+
+// assets & styles
 import playOnLogo from '../assets/there-for-every-moment-light.png';
 import graduation from '../assets/graduation.png';
 import companyLogos from '../assets/company-logos.png';
-import { useCallback } from 'react';
+import './login-form.scss';
 
 interface LoginFormInput {
   email: string;
