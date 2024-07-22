@@ -1,0 +1,132 @@
+.cds--header__action--active {
+  background-color: #2c2c2c;
+  border-block-end: 1px solid #e0e0e0;
+  border-inline-start: 0;
+  border-inline-end: 0;
+}
+
+.cds--header__action:focus {
+  background-color: #2c2c2c;
+  border-block-end: 1px solid #e0e0e0;
+  border-block-start: 0;
+  border-inline-start: 0;
+  border-inline-end: 0;
+}
+
+svg.header__menu-btn__ic {
+  fill: #fff;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    background-color: #2c2c2c;
+    justify-content: space-between;
+
+    &__menu-btn {
+      display: flex;
+    }
+
+    &__name {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    &__user {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 400;
+      padding-right: 1rem;
+
+      &__name {
+        margin-right: 0.5rem;
+      }
+
+      &__avatar {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    width: 100%;
+
+    &__account-item {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e0e0e0;
+      border-radius: 0.5rem;
+      width: 100%;
+      position: relative;
+
+      &__header {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 1rem;
+
+        &__img {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+
+      &__edit-btn {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        font-size: small;
+        text-decoration: none;
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+
+        &__row {
+          display: flex;
+          flex-direction: row;
+          gap: 0.5rem;
+          align-items: center;
+        }
+      }
+    }
+
+    &__accounts-group-heading {
+      padding: 0.4rem;
+      background-color: #1d3d5f;
+      color: #ffffff;
+      margin: 1rem 0;
+      p {
+        font-size: small;
+      }
+    }
+
+    &__accounts-group-content {
+      gap: 1rem;
+    }
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__btn-group {
+        display: flex;
+        gap: 0.2rem;
+        flex-direction: row;
+      }
+    }
+  }
+}

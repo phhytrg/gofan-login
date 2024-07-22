@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../hooks';
 
 const Protected = () => {
@@ -8,7 +8,12 @@ const Protected = () => {
     return <Navigate to="/login" replace={true} />;
   }
 
-  return <Navigate to="/dashboard" />;
+  return (
+    <>
+      <Navigate to="/dashboard" replace={true} />
+      <Outlet />
+    </>
+  );
 };
 
 export default Protected;
