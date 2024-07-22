@@ -1,11 +1,15 @@
+import { useCallback } from 'react';
 import { Button, Column, Grid, PasswordInput, TextInput } from '@carbon/react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import './login-form.scss';
+
+// assets & styles
 import playOnLogo from '../assets/there-for-every-moment-light.png';
 import graduation from '../assets/graduation.png';
 import companyLogos from '../assets/company-logos.png';
-import { useCallback } from 'react';
+import './LoginForm.scss';
+import { useAuth } from '../hooks';
+import { Navigate } from 'react-router-dom';
 
 interface LoginFormInput {
   email: string;
@@ -71,9 +75,14 @@ const LoginForm = () => {
   const { register, formState, handleSubmit } = useForm<LoginFormInput>({
     resolver: useYupValidationResolver(validationSchema),
   });
-  const onSubmit: SubmitHandler<LoginFormInput> = (data) => {
-    console.log(data);
-    console.log(formState);
+
+  const { user, login } = useAuth();
+
+  if (user) {
+    return <Navigate to="/" />;
+  }
+  const onSubmit: SubmitHandler<LoginFormInput> = async (data) => {
+    await login(data);
   };
 
   return (
@@ -111,7 +120,9 @@ const LoginForm = () => {
               <Button className="login-btn" type="submit">
                 Log In
               </Button>
-              <a className="forgot-password-link" href="#">Forgot password</a>
+              <a className="forgot-password-link" href="#">
+                Forgot password
+              </a>
               <p id="center" className="view-mobile">
                 On a mobile device? <a>View mobile HQ</a>
               </p>
@@ -141,14 +152,6 @@ const LoginForm = () => {
           </Column>
         </Grid>
       </div>
-      {/* <div className="login-form">
-        <div>
-
-        </div>
-        <div>
-          
-        </div>
-      </div> */}
     </div>
   );
 };

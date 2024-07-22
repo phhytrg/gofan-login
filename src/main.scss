@@ -1,5 +1,3 @@
-$--cds-field: #f8f8f8;
-
 @use "@carbon/react" with (
   $use-flexbox-grid: true
 );
@@ -22,6 +20,12 @@ $--cds-field: #f8f8f8;
 .cds--content {
   margin-top: 3rem;
   background: var(--cds-background);
+}
+
+:root {
+  --cds-heading-04-font-weight: 600;
+  --cds-field: #f8f8f8;
+  --cds-button-tertiary: #2c2c2c
 }
 
 // :root {
@@ -53,21 +57,13 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  // place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-h2 {
-  line-height: 1.1;
-  font-weight: 700;
-}
+// h3 {
+//   font-weight: 600;
+// }
 
 // button {
 //   border-radius: 8px;
