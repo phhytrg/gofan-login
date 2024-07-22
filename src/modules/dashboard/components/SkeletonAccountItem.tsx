@@ -25,7 +25,6 @@ const SkeletonAccountItem = () => {
         <SkeletonPlaceholder className="dashboard__content__account-item__header__img" />
         <SkeletonText />
       </div>
-      <a className="dashboard__content__account-item__edit-btn">Edit</a>
       <MenuItemDivider />
       <div className="dashboard__content__account-item__content">
         <div className="dashboard__content__account-item__content__row">

@@ -12,7 +12,7 @@ export const accountService = {
       }
       acc[account.department].push(account);
       return acc;
-    }, {} as { [key: string]: AccountDto[] });
+    }, {} as { [key: string]: AccountDto[] }) || {};
   },
 
   getAccounts: async () => {

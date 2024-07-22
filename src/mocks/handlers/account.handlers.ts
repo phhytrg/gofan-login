@@ -9,7 +9,7 @@ export const handlers = [
     );
 
     const createMockAccount = () => ({
-      id: faker.string.uuid(),
+      id: faker.string.alpha({ length: 5 }),
       avatar: faker.image.avatarGitHub(),
       department: departments[Math.floor(Math.random() * departments.length)],
       location: `${faker.location.state()}, ${faker.location.zipCode()}`,
@@ -18,7 +18,7 @@ export const handlers = [
       active: faker.datatype.boolean(),
     });
 
-    await delay(3000);
+    await delay(1000);
 
     return HttpResponse.json(
       Array.from({ length: Math.floor(Math.random() * 10) }, createMockAccount),
